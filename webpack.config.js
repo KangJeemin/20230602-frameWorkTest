@@ -1,15 +1,18 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/react.js',
+  entry: './src/react.tsx',
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.ts',
     path: path.resolve(__dirname, 'public')
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
